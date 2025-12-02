@@ -7,8 +7,7 @@ import "./styles.css";
 export default function App() {
   return (
     <div className="container">
-      <h1>Polymarket Daily Dashboard</h1>
-      <p className="subtitle">Live demo mode using mock data</p>
+      <h1 className="header">Polymarket Daily Dashboard</h1>
 
       <SpreadScanner />
       <Heatmap />
