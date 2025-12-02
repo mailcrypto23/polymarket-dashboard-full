@@ -1,36 +1,37 @@
+// src/components/OrderbookView.jsx
 import { useEffect, useState } from "react";
-import data from "../mock-data/mock_orderbook.json";
+import data from "../../mock-data/mock_orderbook.json";
 
-export default function OrderbookView() {
+export default function OrderbookView(){
   const [orderbook, setOrderbook] = useState(null);
 
-  useEffect(() => {
-    setOrderbook(data);
-  }, []);
+  useEffect(()=>{
+    setOrderbook(data || null);
+  },[]);
 
-  if (!orderbook) return <p>Loading orderbook...</p>;
+  if(!orderbook) return <div className="card">Loading orderbook...</div>;
 
   return (
-    <div className="card">
-      <h2 className="title">📘 Orderbook Depth</h2>
-      <p className="subtitle">Mock CLOB Depth — L1–L5</p>
+    <div className="card fade-in">
+      <div className="title">📘 Orderbook Depth</div>
+      <div className="subtitle">Mock CLOB Depth — L1–L5</div>
 
       <div className="orderbook">
-        <div>
-          <h3>Bids (Buyers)</h3>
-          {orderbook.bids.map((b, i) => (
-            <div key={i} className="row green">
-              <span>{b.price.toFixed(2)}</span>
+        <div className="bids">
+          <h4 style={{marginBottom:8}}>Bids (Buyers)</h4>
+          {orderbook.bids.map((b,i)=>(
+            <div className={`row green`} key={i}>
+              <span>{(b.price).toFixed(2)}</span>
               <span>{b.size}</span>
             </div>
           ))}
         </div>
 
-        <div>
-          <h3>Asks (Sellers)</h3>
-          {orderbook.asks.map((a, i) => (
-            <div key={i} className="row red">
-              <span>{a.price.toFixed(2)}</span>
+        <div className="asks">
+          <h4 style={{marginBottom:8}}>Asks (Sellers)</h4>
+          {orderbook.asks.map((a,i)=>(
+            <div className={`row red`} key={i}>
+              <span>{(a.price).toFixed(2)}</span>
               <span>{a.size}</span>
             </div>
           ))}
