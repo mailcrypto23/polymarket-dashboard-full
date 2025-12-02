@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import markets from "../../mock-data/mock_data.json";
+import markets from "../mock-data/mock_data.json";
 
 export default function MarketOverview() {
   const [data, setData] = useState([]);
@@ -10,7 +10,7 @@ export default function MarketOverview() {
 
   return (
     <div className="card">
-      <h2 className="title">📈 Market Overview</h2>
+      <h2 className="title">📊 Market Overview</h2>
       <p className="subtitle">Mock market snapshot — overview of top markets</p>
 
       <table className="table">
@@ -24,13 +24,15 @@ export default function MarketOverview() {
             <th>Liquidity</th>
           </tr>
         </thead>
+
         <tbody>
           {data.map((m, i) => (
             <tr key={i}>
               <td>{m.market}</td>
               <td>{m.yes.toFixed(2)}</td>
               <td>{m.no.toFixed(2)}</td>
-              <td>${m.volume.toLocaleString()}</td>
+              <td>{m.volume.toLocaleString()}</td>
+
               <td
                 style={{
                   color:
@@ -39,11 +41,11 @@ export default function MarketOverview() {
                       : m.trend === "down"
                       ? "red"
                       : "orange",
-                  fontWeight: "bold",
                 }}
               >
-                {m.trend.toUpperCase()}
+                {m.trend}
               </td>
+
               <td>{m.liquidity}</td>
             </tr>
           ))}
