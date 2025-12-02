@@ -1,17 +1,19 @@
+// src/components/MarketOverview.jsx
 import { useEffect, useState } from "react";
-import markets from "../mock-data/mock_data.json";
+import markets from "../../mock-data/mock_data.json";
 
-export default function MarketOverview() {
+export default function MarketOverview(){
   const [data, setData] = useState([]);
 
-  useEffect(() => {
-    setData(markets);
+  useEffect(()=> {
+    // load mock snapshot
+    setData(markets || []);
   }, []);
 
   return (
-    <div className="card">
-      <h2 className="title">📊 Market Overview</h2>
-      <p className="subtitle">Mock market snapshot — overview of top markets</p>
+    <div className="card fade-in">
+      <div className="title">📊 Market Overview</div>
+      <div className="subtitle">Mock market snapshot — overview of top markets</div>
 
       <table className="table">
         <thead>
@@ -24,28 +26,16 @@ export default function MarketOverview() {
             <th>Liquidity</th>
           </tr>
         </thead>
-
         <tbody>
           {data.map((m, i) => (
             <tr key={i}>
               <td>{m.market}</td>
-              <td>{m.yes.toFixed(2)}</td>
-              <td>{m.no.toFixed(2)}</td>
-              <td>{m.volume.toLocaleString()}</td>
-
-              <td
-                style={{
-                  color:
-                    m.trend === "up"
-                      ? "green"
-                      : m.trend === "down"
-                      ? "red"
-                      : "orange",
-                }}
-              >
+              <td>{m.yes?.toFixed(2)}</td>
+              <td>{m.no?.toFixed(2)}</td>
+              <td>{Number(m.volume).toLocaleString()}</td>
+              <td style={{color: m.trend === "up" ? "var(--success)" : m.trend === "down" ? "var(--danger)" : "var(--muted)"}}>
                 {m.trend}
               </td>
-
               <td>{m.liquidity}</td>
             </tr>
           ))}
