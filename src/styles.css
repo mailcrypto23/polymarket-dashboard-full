@@ -1,9 +1,87 @@
-.app-container {
-  padding: 20px;
+body {
   font-family: Arial, sans-serif;
+  background: #0d0d0d;
+  color: white;
+  padding: 20px;
 }
 
-h1 {
+.card {
+  background: #151515;
+  padding: 20px;
+  border-radius: 12px;
   margin-bottom: 20px;
-  font-size: 28px;
+  border: 1px solid #222;
 }
+
+.title {
+  font-size: 22px;
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  font-size: 14px;
+  opacity: 0.6;
+  margin-bottom: 12px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 8px;
+  border-bottom: 1px solid #333;
+}
+
+.green {
+  color: #3fda3f;
+}
+
+.red {
+  color: #ff4d4d;
+}
+
+.heatmap-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+.heatbox {
+  padding: 15px;
+  border-radius: 10px;
+  background: #222;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.small {
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+.orderbook {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  border-bottom: 1px solid #333;
+}
+
+.signals {
+  list-style: none;
+  padding-left: 0;
+}
+
+.signals li {
+  margin-bottom: 8px;
+}
+
