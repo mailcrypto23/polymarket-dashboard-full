@@ -1,5 +1,3 @@
-function SignalsPanel() {
-  return <div>Signals Panel (Coming Soon)</div>;
+export default function SignalsPanel() {
+  return <div className="card">⚡ Signals Panel (Coming Soon)</div>;
 }
-
-export default SignalsPanel;
