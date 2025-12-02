@@ -2,14 +2,14 @@ import SpreadScanner from "./components/SpreadScanner";
 import Heatmap from "./components/Heatmap";
 import OrderbookView from "./components/OrderbookView";
 import SignalsPanel from "./components/SignalsPanel";
-import MarketOverview from "./components/MarketOverview";
+import "./styles.css";
 
 export default function App() {
   return (
     <div className="container">
-      <h1 className="header">Polymarket Daily Dashboard</h1>
+      <h1>Polymarket Daily Dashboard</h1>
+      <p className="subtitle">Live demo mode using mock data</p>
 
-      <MarketOverview />
       <SpreadScanner />
       <Heatmap />
       <OrderbookView />
