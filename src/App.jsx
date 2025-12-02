@@ -1,15 +1,11 @@
-import { useState } from "react";
+import SpreadScanner from "./components/SpreadScanner";
 import Heatmap from "./components/Heatmap";
 import OrderbookView from "./components/OrderbookView";
-import SpreadScanner from "./components/SpreadScanner";
 import SignalsPanel from "./components/SignalsPanel";
-import "./styles.css";
 
-function App() {
+export default function App() {
   return (
-    <div className="app-container">
-      <h1>Polymarket Daily Dashboard</h1>
-
+    <div>
       <SpreadScanner />
       <Heatmap />
       <OrderbookView />
@@ -17,5 +13,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
