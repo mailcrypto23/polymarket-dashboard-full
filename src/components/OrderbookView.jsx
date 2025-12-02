@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import data from "../../mock-data/mock_orderbook.json";
+import data from "../mock-data/mock_orderbook.json";
 
 export default function OrderbookView() {
   const [orderbook, setOrderbook] = useState(null);
@@ -12,12 +12,12 @@ export default function OrderbookView() {
 
   return (
     <div className="card">
-      <h2 className="title">📉 Orderbook Depth</h2>
-      <p className="subtitle">Mock CLOB Preview (L1–L5)</p>
+      <h2 className="title">📘 Orderbook Depth</h2>
+      <p className="subtitle">Mock CLOB Depth — L1–L5</p>
 
       <div className="orderbook">
         <div>
-          <h3>Bids</h3>
+          <h3>Bids (Buyers)</h3>
           {orderbook.bids.map((b, i) => (
             <div key={i} className="row green">
               <span>{b.price.toFixed(2)}</span>
@@ -27,7 +27,7 @@ export default function OrderbookView() {
         </div>
 
         <div>
-          <h3>Asks</h3>
+          <h3>Asks (Sellers)</h3>
           {orderbook.asks.map((a, i) => (
             <div key={i} className="row red">
               <span>{a.price.toFixed(2)}</span>
