@@ -1,6 +1,6 @@
 // src/components/Heatmap.jsx
 import { useEffect, useState } from "react";
-import spreads from "../../mock-data/mock_spread_history.json";
+import spreads from "../mock-data/mock_spread_history.json";
 
 export default function Heatmap(){
   const [spreadData, setSpreadData] = useState([]);
