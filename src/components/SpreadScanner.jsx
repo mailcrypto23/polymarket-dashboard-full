@@ -1,6 +1,6 @@
 // src/components/SpreadScanner.jsx
 import { useEffect, useState } from "react";
-import markets from "../../mock-data/mock_data.json";
+import markets from "../mock-data/mock_data.json";
 
 export default function SpreadScanner(){
   const [spreads, setSpreads] = useState([]);
