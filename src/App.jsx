@@ -2,7 +2,7 @@ import SpreadScanner from "./components/SpreadScanner";
 import Heatmap from "./components/Heatmap";
 import OrderbookView from "./components/OrderbookView";
 import SignalsPanel from "./components/SignalsPanel";
-import "./styles.css";
+import "./styles.css?v=7";
 
 export default function App() {
   return (
@@ -16,3 +16,5 @@ export default function App() {
     </div>
   );
 }
+/* vercel css purge */
+.vercel-refresh { display:none; }
