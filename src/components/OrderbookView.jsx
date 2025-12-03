@@ -1,6 +1,6 @@
 // src/components/OrderbookView.jsx
 import { useEffect, useState } from "react";
-import data from "../../mock-data/mock_orderbook.json";
+import data from "../mock-data/mock_orderbook.json";
 
 export default function OrderbookView(){
   const [orderbook, setOrderbook] = useState(null);
