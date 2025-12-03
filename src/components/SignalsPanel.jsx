@@ -1,6 +1,6 @@
 // src/components/SignalsPanel.jsx
 import { useEffect, useState } from "react";
-import trades from "../../mock-data/mock_trades.json";
+import signals from "../mock-data/mock_trades.json";
 
 export default function SignalsPanel(){
   const [data, setData] = useState([]);
