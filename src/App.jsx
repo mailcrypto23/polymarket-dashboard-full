@@ -4,29 +4,29 @@ import SpreadScanner from "./components/SpreadScanner";
 import Heatmap from "./components/Heatmap";
 import OrderbookView from "./components/OrderbookView";
 import SignalsPanel from "./components/SignalsPanel";
+import "./styles.css";
 
 export default function App() {
   return (
     <div className="app-root">
-      <header className="app-header">
-        <h1 className="app-title">Polymarket Daily Dashboard</h1>
-        <p className="app-sub">Dark UI — Mock data preview for Builder Program</p>
-      </header>
+      <h1 className="app-title">Polymarket Daily Dashboard</h1>
+      <p className="app-sub">Dark UI — Mock data preview for Builder Program</p>
 
       <main className="app-container">
-        <section className="col-1">
+        {/* LEFT SIDE */}
+        <div className="left-col">
           <div className="card">
             <MarketOverview />
           </div>
 
           <div className="card">
             <SpreadScanner />
-            <div style={{ height: 18 }} />
             <Heatmap />
           </div>
-        </section>
+        </div>
 
-        <section className="col-2">
+        {/* RIGHT SIDE */}
+        <div className="right-col">
           <div className="card">
             <OrderbookView />
           </div>
@@ -34,11 +34,11 @@ export default function App() {
           <div className="card">
             <SignalsPanel />
           </div>
-        </section>
+        </div>
       </main>
 
       <footer className="app-footer">
-        Powered by mock datasets • Built for Polymarket Builder Program
+        Built with Premium UI v3 • Polymarket Builder Program
       </footer>
     </div>
   );
