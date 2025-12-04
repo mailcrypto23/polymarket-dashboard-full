@@ -1,53 +1,118 @@
+/* === GLOBAL === */
 body {
   margin: 0;
-  background: #0d0f1a;
-  font-family: Inter, sans-serif;
-  color: #e4e7ef;
+  padding: 0;
+  background: radial-gradient(circle at top, #0f0f1d 0%, #090a12 60%);
+  font-family: Inter, system-ui, sans-serif;
+  color: #e6e6f0;
 }
 
+/* Root container */
 .app-root {
-  padding: 24px;
+  padding: 32px;
+  max-width: 1400px;
+  margin: auto;
 }
 
+/* HEADER */
 .app-header {
   text-align: center;
-  margin-bottom: 32px;
+  margin-bottom: 40px;
 }
 
 .app-title {
-  font-size: 32px;
-  color: #b892ff;
+  font-size: 36px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #b892ff, #7dd3fc);
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 .app-sub {
-  opacity: 0.7;
-  margin-top: -4px;
+  margin-top: -6px;
+  opacity: 0.6;
+  font-size: 15px;
 }
 
+/* === LAYOUT GRID === */
 .app-container {
   display: flex;
-  gap: 24px;
+  gap: 28px;
 }
 
 .col-1 {
-  flex: 1.2;
+  flex: 1.4;
 }
 
 .col-2 {
   flex: 1;
 }
 
+/* === CARD STYLE === */
 .card {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 14px;
-  padding: 20px;
-  margin-bottom: 24px;
-  box-shadow: 0 0 24px rgba(0, 0, 0, 0.25);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  box-shadow: 0px 6px 30px rgba(0, 0, 0, 0.45);
+  border-radius: 16px;
+  padding: 22px 26px;
+  margin-bottom: 26px;
+  backdrop-filter: blur(12px);
+  transition: 0.25s ease;
 }
 
+.card:hover {
+  box-shadow: 0px 8px 40px rgba(0, 0, 0, 0.55);
+  transform: translateY(-2px);
+}
+
+/* Section titles */
+.card h2 {
+  margin: 0 0 16px 0;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card h2::after {
+  content: "";
+  flex-grow: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15));
+}
+
+/* TABLE STYLE */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+th {
+  text-align: left;
+  opacity: 0.6;
+  font-weight: 600;
+}
+
+td {
+  padding: 6px 0;
+}
+
+/* HEATMAP BOXES */
+.heat-box {
+  background: linear-gradient(90deg, #ffdf9e, #ffc766);
+  padding: 10px 14px;
+  border-radius: 10px;
+  margin: 8px 0;
+  font-weight: 600;
+  color: #2c1f07;
+}
+
+/* FOOTER */
 .app-footer {
-  margin-top: 50px;
+  margin-top: 40px;
   text-align: center;
-  opacity: 0.65;
+  opacity: 0.55;
   font-size: 14px;
 }
