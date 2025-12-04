@@ -1,14 +1,14 @@
-import React from 'react'
+import React from "react";
 
-const BIDS = [0.48,0.47,0.46,0.45,0.44]
-const QTY = [1200,900,800,700,600]
-const ASKS = [0.52,0.53,0.54,0.55,0.56]
-const ASK_Q = [1100,950,870,790,680]
+const BIDS = [0.48,0.47,0.46,0.45,0.44];
+const QTY = [1200,900,800,700,600];
+const ASKS = [0.52,0.53,0.54,0.55,0.56];
+const ASK_Q = [1100,950,870,790,680];
 
-export default function OrderbookView(){
+export default function OrderbookView() {
   return (
     <div>
-      <h2 className="section-title">📘 Orderbook Depth</h2>
+      <h2 className="sec-title small"><span className="emoji">📘</span> Orderbook Depth</h2>
       <p className="muted">Mock CLOB Depth — L1–L5</p>
 
       <div className="orderbook-grid">
@@ -31,5 +31,5 @@ export default function OrderbookView(){
         </div>
       </div>
     </div>
-  )
+  );
 }
