@@ -1,129 +1,174 @@
-/* ===== Premium v3 — Neon Glass Crypto Dashboard ===== */
+/* -----------------------------------------------------
+   PREMIUM UI V3 — Polymarket Dashboard
+   Neon Crypto Dashboard + Glassmorphism
+------------------------------------------------------ */
 
-/* Background */
-body {
+/* GLOBAL RESET */
+* {
   margin: 0;
   padding: 0;
-  font-family: "Inter", sans-serif;
-  background: radial-gradient(circle at top, #0d0f23, #05060e 70%);
-  color: #e4e8ff;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
 }
 
-/* Page Title */
-.app-title {
-  font-size: 34px;
-  font-weight: 700;
+body {
+  background: radial-gradient(circle at center, #0a0f2d, #050713, #02030a);
+  color: #dfe4ff;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+/* -----------------------------------------------------
+   HEADER
+------------------------------------------------------ */
+.app-header {
   text-align: center;
-  margin-top: 40px;
-  background: linear-gradient(90deg, #6a7cff, #c86bff);
+  margin-bottom: 40px;
+}
+
+.app-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #a770ff, #6b9bff, #4fffd7);
   -webkit-background-clip: text;
   color: transparent;
 }
 
 .app-sub {
-  text-align: center;
-  margin-top: -10px;
-  color: #a0a8d9;
-  font-size: 14px;
+  margin-top: 6px;
+  opacity: 0.7;
+  font-size: 0.95rem;
 }
 
-/* Layout */
+/* -----------------------------------------------------
+   MAIN LAYOUT GRID
+------------------------------------------------------ */
 .app-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 28px;
-  padding: 40px;
+  gap: 26px;
   max-width: 1400px;
   margin: auto;
 }
 
-/* Premium Glass Cards */
+/* -----------------------------------------------------
+   PREMIUM NEON CARD
+------------------------------------------------------ */
 .card {
-  background: rgba(18, 22, 45, 0.6);
+  background: rgba(255, 255, 255, 0.03);
   border-radius: 18px;
-  padding: 22px;
+  padding: 20px 24px;
   backdrop-filter: blur(18px);
-  border: 1px solid rgba(120, 140, 255, 0.15);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border: 1px solid rgba(120, 120, 255, 0.25);
+
+  /* Neon edge glow */
+  box-shadow:
+    0 0 18px rgba(100, 60, 255, 0.25),
+    inset 0 0 12px rgba(100, 60, 255, 0.15);
+
+  transition: 0.25s ease;
 }
 
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 28px rgba(130, 90, 255, 0.25);
-  border-color: rgba(160, 110, 255, 0.35);
+  box-shadow:
+    0 0 22px rgba(140, 80, 255, 0.45),
+    inset 0 0 16px rgba(140, 80, 255, 0.18);
 }
 
-/* Section Titles */
-.section-title {
-  font-size: 18px;
+/* -----------------------------------------------------
+   SECTION TITLES
+------------------------------------------------------ */
+.card h2 {
+  font-size: 1.15rem;
+  margin-bottom: 12px;
   font-weight: 600;
-  margin-bottom: 14px;
-  background: linear-gradient(90deg, #76bafe, #9f6bff);
-  -webkit-background-clip: text;
-  color: transparent;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-/* Table Style */
+.card h2::before {
+  content: "◆";
+  font-size: 0.9rem;
+  color: #7d5bff;
+}
+
+/* -----------------------------------------------------
+   TABLE STYLES
+------------------------------------------------------ */
 table {
   width: 100%;
-  margin-top: 12px;
   border-collapse: collapse;
-  font-size: 14px;
+  margin-top: 12px;
 }
 
-td {
-  padding: 8px 6px;
+thead {
+  font-size: 0.75rem;
+  opacity: 0.7;
 }
 
-tr:nth-child(even) {
-  background: rgba(255,255,255,0.03);
-  border-radius: 8px;
+tbody td {
+  padding: 6px 0;
+  font-size: 0.88rem;
 }
 
-/* Highlight Colors */
-.text-green {
-  color: #4af49c;
+tbody tr {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-.text-red {
-  color: #ff6b8a;
+/* Trend colors */
+.up { color: #4dff9a; }
+.down { color: #ff6b6b; }
+.flat { color: #c7c7c7; }
+
+/* -----------------------------------------------------
+   HEATMAP BUTTONS
+------------------------------------------------------ */
+.heatmap-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 14px;
 }
 
-.text-yellow {
-  color: #ffd66b;
-}
-
-/* Heatmap Buttons */
-.heatmap-pill {
-  display: inline-block;
-  padding: 12px 20px;
+.heatmap-item {
+  flex: 1;
+  background: linear-gradient(135deg, #ffdd99, #ffb866);
   border-radius: 12px;
-  margin-right: 12px;
+  padding: 14px 10px;
+  text-align: center;
+  color: #1a1a1a;
   font-weight: 600;
-  color: #0d0f23;
-  background: linear-gradient(145deg, #ffd480, #ffbd4e);
-  cursor: pointer;
-  box-shadow: 0 4px 10px rgba(255,200,120,0.3);
-  transition: transform 0.25s ease;
+  box-shadow: 0 3px 10px rgba(255, 190, 120, 0.4);
+  transition: 0.25s ease;
 }
 
-.heatmap-pill:hover {
+.heatmap-item:hover {
   transform: translateY(-3px);
+  box-shadow: 0 5px 14px rgba(255, 190, 120, 0.55);
 }
 
-/* Signals Panel Boxes */
+/* -----------------------------------------------------
+   SIGNALS PANEL
+------------------------------------------------------ */
 .signal-box {
-  background: rgba(255,255,255,0.05);
-  padding: 14px;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
   margin-bottom: 12px;
+  border: 1px solid rgba(120, 120, 255, 0.22);
 }
 
+.signal-box:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* -----------------------------------------------------
+   FOOTER
+------------------------------------------------------ */
 .app-footer {
-  margin-top: 40px;
   text-align: center;
-  padding-bottom: 40px;
-  color: #7e85b5;
-  font-size: 13px;
+  margin-top: 40px;
+  opacity: 0.55;
+  font-size: 0.85rem;
 }
