@@ -1,14 +1,14 @@
-import React from 'react'
+import React from "react";
 
 const HM = [
-  { title: 'BTC > $100k?', score: 0.32, color: 'gold' },
-  { title: 'ETH Flip BTC?', score: 0.36, color: 'gold' },
-  { title: 'Trump 2024?', score: 0.22, color: 'cyan' }
-]
+  { title: "BTC > $100k?", score: 0.32, color: "gold" },
+  { title: "ETH Flip BTC?", score: 0.36, color: "gold" },
+  { title: "Trump 2024?", score: 0.22, color: "cyan" }
+];
 
-export default function Heatmap(){
+export default function Heatmap() {
   return (
-    <div>
+    <div style={{marginTop: 8}}>
       <h3 className="sub-title">🔥 Spread & Liquidity Heatmap</h3>
       <p className="muted">Mock Data — Spread Volatility</p>
 
@@ -21,5 +21,5 @@ export default function Heatmap(){
         ))}
       </div>
     </div>
-  )
+  );
 }
