@@ -1,0 +1,26 @@
+[
+  {
+    "market": "BTC > $100k?",
+    "yes": 0.48,
+    "no": 0.52,
+    "volume": 1528200,
+    "liquidity": 4,
+    "trend": "up"
+  },
+  {
+    "market": "ETH Flip BTC?",
+    "yes": 0.32,
+    "no": 0.68,
+    "volume": 723000,
+    "liquidity": 3,
+    "trend": "down"
+  },
+  {
+    "market": "Trump 2024?",
+    "yes": 0.54,
+    "no": 0.46,
+    "volume": 2598000,
+    "liquidity": 5,
+    "trend": "flat"
+  }
+]
