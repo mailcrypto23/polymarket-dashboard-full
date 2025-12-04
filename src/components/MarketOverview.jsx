@@ -1,15 +1,15 @@
-import React from 'react'
+import React from "react";
 
 const MOCK = [
-  { market: 'BTC > $100k?', yes: 0.48, no: 0.52, volume: '1,528,200', trend: 'up' },
-  { market: 'ETH Flip BTC?', yes: 0.32, no: 0.68, volume: '723,000', trend: 'down' },
-  { market: 'Trump 2024?', yes: 0.54, no: 0.46, volume: '2,598,000', trend: 'flat' }
-]
+  { market: "BTC > $100k?", yes: 0.48, no: 0.52, volume: "1,528,200", trend: "up" },
+  { market: "ETH Flip BTC?", yes: 0.32, no: 0.68, volume: "723,000", trend: "down" },
+  { market: "Trump 2024?", yes: 0.54, no: 0.46, volume: "2,598,000", trend: "flat" }
+];
 
-export default function MarketOverview(){
+export default function MarketOverview() {
   return (
     <div>
-      <h2 className="section-title">📊 Market Overview</h2>
+      <h2 className="sec-title"><span className="emoji">🏷️</span> Market Overview</h2>
       <p className="muted">Mock market snapshot — overview of top markets</p>
 
       <div className="table-wrap">
@@ -24,7 +24,7 @@ export default function MarketOverview(){
             </tr>
           </thead>
           <tbody>
-            {MOCK.map((r,i) => (
+            {MOCK.map((r, i) => (
               <tr key={i}>
                 <td className="market-cell">{r.market}</td>
                 <td>{r.yes.toFixed(2)}</td>
@@ -37,5 +37,5 @@ export default function MarketOverview(){
         </table>
       </div>
     </div>
-  )
+  );
 }
