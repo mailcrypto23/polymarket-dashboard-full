@@ -1,133 +1,194 @@
-:root{
-  --bg-1: #060814;
-  --bg-2: #071028;
-  --card: rgba(255,255,255,0.03);
-  --muted: #9aa7bd;
-  --accent-a: #b56bff; /* purple */
-  --accent-b: #6ad6ff; /* cyan */
-  --glass: rgba(255,255,255,0.03);
-  --rounded: 14px;
-  --shadow: 0 12px 30px rgba(6,8,20,0.6);
-  --neon: rgba(171,94,255,0.12);
+/* ----------------------------------------------------------
+   PREMIUM UI v4 — Luxury Gradient + NeoGlass Dashboard
+   Polymarket Builder Program — Full Stylesheet
+-----------------------------------------------------------*/
+
+/* ---------- Root Theme Vars ---------- */
+:root {
+  --bg-main: #060014;
+  --bg-panel: rgba(255, 255, 255, 0.03);
+  --bg-card: rgba(255, 255, 255, 0.05);
+  --accent: #8a5bff;  /* Purple accent */
+  --accent-2: #46d6ff; /* Cyan accent */
+  --text-primary: #e6e6f8;
+  --text-secondary: #b8b8d8;
+  --radius: 16px;
+  --shadow-glow: 0 0 26px rgba(140, 90, 255, 0.35);
+  --shadow-soft: 0 4px 28px rgba(0, 0, 0, 0.25);
 }
 
-/* base */
-*{box-sizing:border-box}
-html,body,#root{height:100%}
-body{
-  margin:0;
-  font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  background: linear-gradient(180deg, #03030a 0%, #071028 35%, #071027 100%);
-  color:#e6eef8;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
+/* ---------- Global Reset ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* header */
-.pm-header{padding:36px 20px 6px; text-align:center}
-.pm-header-inner{max-width:1200px;margin:0 auto}
-.pm-title{font-size:36px;margin:0;color:var(--accent-a);text-shadow:0 10px 40px rgba(181,107,255,0.12)}
-.pm-sub{margin:6px 0 0;color:var(--muted);font-size:13px}
-
-/* layout */
-.pm-main{max-width:1200px;margin:22px auto;padding:0 20px;display:flex;gap:24px;align-items:flex-start}
-.pm-col-left{flex:1.4;display:flex;flex-direction:column;gap:18px}
-.pm-col-right{flex:1;display:flex;flex-direction:column;gap:18px}
-
-/* card style */
-.pm-card{
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-  border-radius:var(--rounded);
-  padding:18px;
-  border:1px solid rgba(255,255,255,0.03);
-  box-shadow: var(--shadow);
-  backdrop-filter: blur(8px) saturate(140%);
-  position:relative;
-  overflow:hidden;
+html, body, #root {
+  height: 100%;
 }
 
-/* neon rim effect */
-.pm-card::before{
-  content:"";
-  position:absolute;inset:-2px;
-  background:linear-gradient(90deg, rgba(181,107,255,0.06), rgba(106,214,255,0.04));
-  border-radius:calc(var(--rounded) + 2px);
-  z-index:0;mix-blend-mode:screen;filter:blur(10px);opacity:0.9;
-  pointer-events:none;
-}
-.pm-card > *{position:relative;z-index:1}
-
-/* sticky right column */
-.pm-card.sticky{position:sticky;top:36px}
-
-/* headings */
-.sec-title{font-size:18px;margin:0 0 8px;color:#eaf0ff;font-weight:700;display:flex;align-items:center;gap:10px}
-.sec-title .emoji{font-size:18px}
-.sub-title{font-size:14px;margin:0 0 8px;color:var(--muted)}
-.muted{color:var(--muted);font-size:13px;margin-bottom:12px}
-
-/* table */
-.table-wrap{overflow:auto;border-radius:10px}
-.table{width:100%;border-collapse:collapse;font-size:14px}
-.table th{text-align:left;padding:12px;color:#9fb0d4;font-weight:700;border-bottom:1px solid rgba(255,255,255,0.03)}
-.table td{padding:12px 10px;border-bottom:1px dashed rgba(255,255,255,0.02)}
-.market-cell{font-weight:700}
-
-/* tags */
-.tag{padding:6px 10px;border-radius:999px;font-weight:700;text-transform:lowercase;font-size:13px}
-.tag.up{background:rgba(16,185,129,0.12);color:#10b981}
-.tag.down{background:rgba(239,68,68,0.08);color:#ef4444}
-.tag.flat{background:rgba(148,163,184,0.04);color:#94a3b8}
-
-/* spread colors */
-.spread-ok{color:#10b981;font-weight:700}
-.spread-warning{color:#f59e0b;font-weight:700}
-
-/* heatmap */
-.heatmap-row{display:flex;gap:12px;margin-top:12px}
-.heatbox{flex:1;padding:18px;border-radius:12px;text-align:center;color:#0b1220;font-weight:800;box-shadow:0 10px 30px rgba(11,18,32,0.5)}
-.heatbox .heatbox-title{font-size:14px}
-.heatbox .heatbox-score{margin-top:6px;font-size:18px}
-.heatbox.gold{background:linear-gradient(180deg,#ffdca8,#ffb86b)}
-.heatbox.cyan{background:linear-gradient(180deg,#a3f0ff,#7bd1ff)}
-
-/* orderbook */
-.orderbook-grid{display:grid;grid-template-columns:1fr 80px 1fr 80px;align-items:center}
-.column{padding:8px}
-.center-col{display:flex;flex-direction:column;align-items:center;gap:10px}
-.depth-row{padding:8px 0}
-.price.green{color:#10b981;font-weight:700}
-.price.red{color:#ff8b90;font-weight:700}
-.depth-qty{color:#9ae6b4;font-weight:700;text-align:center}
-.depth-qty.right{text-align:right;color:#ff9aa2}
-.col-title{font-weight:700;margin-bottom:8px}
-
-/* signals */
-.signals-list{display:flex;flex-direction:column;gap:12px}
-.signal-card{display:flex;justify-content:space-between;align-items:center;padding:14px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00))}
-.signal-title{font-weight:700}
-.signal-sub{font-size:13px}
-.signal-price{font-weight:800;font-size:20px}
-.small{font-size:12px}
-
-/* footer */
-.pm-footer{padding:30px 0;text-align:center;color:var(--muted);font-size:13px}
-
-/* responsive */
-@media (max-width:980px){
-  .pm-main{flex-direction:column;padding:0 18px}
-  .orderbook-grid{grid-template-columns:1fr 1fr}
-  .pm-col-right{order:2}
-  .pm-col-left{order:1}
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  background: linear-gradient(160deg, #08001e 0%, #0b0028 35%, #070120 100%);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
-/* tiny helpers */
-.green{color:#10b981}
-.red{color:#ff8b90}
+/* ---------- Header ---------- */
+.pm-header {
+  padding: 42px 0 10px;
+  text-align: center;
+}
 
-/* additional small polish for Luxury v4 */
-.pm-title{letter-spacing:0.6px}
-.table td, .table th{transition:background .18s ease}
-.table tr:hover td{background:linear-gradient(90deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00))}
+.pm-header-inner {
+  max-width: 900px;
+  margin: auto;
+}
 
-/* end styles */
+.pm-title {
+  font-size: 34px;
+  font-weight: 700;
+  color: #c290ff;
+  letter-spacing: 0.3px;
+  text-shadow: 0 0 28px rgba(140, 90, 255, 0.55);
+}
+
+.pm-sub {
+  margin-top: 6px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+/* ---------- Layout System (Premium v4) ---------- */
+
+.pm-layout {
+  max-width: 1320px;
+  margin: 40px auto 60px;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 420px; /* left = dynamic, right = fixed */
+  gap: 32px;
+}
+
+.pm-column {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.pm-sticky {
+  position: sticky;
+  top: 120px;
+}
+
+/* ---------- Card Style (NeoGlass) ---------- */
+.pm-card {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  padding: 28px 26px;
+  box-shadow: var(--shadow-soft),
+              0 0 26px rgba(120, 60, 255, 0.25);
+  backdrop-filter: blur(22px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: 0.25s ease;
+}
+
+.pm-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 30px rgba(140, 90, 255, 0.45);
+}
+
+/* ---------- Component Typography ---------- */
+
+.pm-card h2,
+.pm-card h3 {
+  font-weight: 600;
+  margin-bottom: 14px;
+  color: #dcdcff;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pm-card p, .pm-card span, .pm-card td {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+/* ---------- Tables ---------- */
+
+.pm-card table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.pm-card table th {
+  text-align: left;
+  font-size: 13px;
+  padding: 4px 0;
+  color: #cfcff8;
+}
+
+.pm-card table td {
+  padding: 4px 0;
+  font-size: 14px;
+}
+
+.pm-green {
+  color: #4aff7a;
+}
+
+.pm-red {
+  color: #ff5f70;
+}
+
+/* ---------- Mini Heatmap bubbles ---------- */
+
+.pm-heatmap {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.pm-heat {
+  flex: 1;
+  padding: 16px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 12px;
+  text-align: center;
+  font-weight: 600;
+  box-shadow: inset 0 0 12px rgba(0,0,0,0.25);
+}
+
+/* ---------- Footer ---------- */
+
+.pm-footer {
+  text-align: center;
+  padding: 40px 0 20px;
+  color: #8c8ca8;
+  font-size: 13px;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 1180px) {
+  .pm-layout {
+    grid-template-columns: 1fr;
+  }
+  .pm-sticky {
+    position: relative;
+    top: 0;
+  }
+}
+
+@media (max-width: 720px) {
+  .pm-title {
+    font-size: 26px;
+  }
+  .pm-card {
+    padding: 20px 18px;
+  }
+}
