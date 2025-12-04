@@ -1,0 +1,10 @@
+:root{
+  --bg:#051025;
+  --panel:#071023;
+  --muted: #97a0b5;
+  --accent: #9b7cff;
+  --glass: rgba(255,255,255,0.03);
+  --rounded: 14px;
+}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(180deg,#02040a 0%, #051025 60%);color:#e6eef8;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial}
