@@ -12,36 +12,40 @@ export default function App() {
       <header className="pm-header">
         <div className="pm-header-inner">
           <h1 className="pm-title">Polymarket Daily Dashboard</h1>
-          <p className="pm-sub">Luxury Gradient • Mock-data preview for Builder Program</p>
+          <p className="pm-sub">Luxury Gradient · Mock-data preview for Builder Program</p>
         </div>
       </header>
 
-      <main className="pm-main">
-        <section className="pm-col-left">
+      <div className="pm-layout">
+        {/* Left Column */}
+        <div className="pm-column">
           <div className="pm-card">
             <MarketOverview />
           </div>
 
           <div className="pm-card">
             <SpreadScanner />
-            <div style={{height: 18}} />
+          </div>
+
+          <div className="pm-card">
             <Heatmap />
           </div>
-        </section>
+        </div>
 
-        <aside className="pm-col-right">
-          <div className="pm-card sticky">
+        {/* Right Column */}
+        <div className="pm-column pm-sticky">
+          <div className="pm-card">
             <OrderbookView />
           </div>
 
           <div className="pm-card">
             <SignalsPanel />
           </div>
-        </aside>
-      </main>
+        </div>
+      </div>
 
       <footer className="pm-footer">
-        Built with Premium UI v4 — Polymarket Builder Program
+        Built with Premium UI v4 · Polymarket Builder Program
       </footer>
     </div>
   );
