@@ -8,37 +8,40 @@ import "./styles.css";
 
 export default function App() {
   return (
-    <div className="app-root">
-      <h1 className="app-title">Polymarket Daily Dashboard</h1>
-      <p className="app-sub">Dark UI — Mock data preview for Builder Program</p>
+    <div className="pm-root">
+      <header className="pm-header">
+        <div className="pm-header-inner">
+          <h1 className="pm-title">Polymarket Daily Dashboard</h1>
+          <p className="pm-sub">Luxury Gradient • Mock-data preview for Builder Program</p>
+        </div>
+      </header>
 
-      <main className="app-container">
-        {/* LEFT SIDE */}
-        <div className="left-col">
-          <div className="card">
+      <main className="pm-main">
+        <section className="pm-col-left">
+          <div className="pm-card">
             <MarketOverview />
           </div>
 
-          <div className="card">
+          <div className="pm-card">
             <SpreadScanner />
+            <div style={{height: 18}} />
             <Heatmap />
           </div>
-        </div>
+        </section>
 
-        {/* RIGHT SIDE */}
-        <div className="right-col">
-          <div className="card">
+        <aside className="pm-col-right">
+          <div className="pm-card sticky">
             <OrderbookView />
           </div>
 
-          <div className="card">
+          <div className="pm-card">
             <SignalsPanel />
           </div>
-        </div>
+        </aside>
       </main>
 
-      <footer className="app-footer">
-        Built with Premium UI v3 • Polymarket Builder Program
+      <footer className="pm-footer">
+        Built with Premium UI v4 — Polymarket Builder Program
       </footer>
     </div>
   );
